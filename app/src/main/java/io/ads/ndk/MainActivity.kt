@@ -24,7 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-
+        AdsUtil.showStaticNativeNormal(
+            this,
+            AdsUtil.getKeyNative(this, Constants.NATIVE_HOME),
+            Constants.NATIVE_HOME,
+            binding.nativeContainer
+        )
     }
 
     override fun onResume() {

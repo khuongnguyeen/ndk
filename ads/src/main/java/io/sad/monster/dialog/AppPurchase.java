@@ -32,9 +32,10 @@ import java.util.Map;
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import io.sad.monster.BuildConfig;
 import io.sad.monster.callback.BillingListener;
 import io.sad.monster.callback.PurchaseListioner;
-import io.sad.monster.util.AdsUtil;
 
 public class AppPurchase {
     public static final String PRODUCT_ID_TEST = "android.test.purchased";
@@ -219,7 +220,7 @@ public class AppPurchase {
     public void initBilling(final Application application) {
         listSubcriptionId = new ArrayList<>();
         listINAPId = new ArrayList<>();
-        if (AdsUtil.BUILD_DEBUG) {
+        if (BuildConfig.DEBUG) {
             listINAPId.add(PRODUCT_ID_TEST);
         }
         billingClient = BillingClient.newBuilder(application)
@@ -234,7 +235,7 @@ public class AppPurchase {
         listSubcriptionId = listSubsId;
         this.listINAPId = listINAPId;
 
-        if (AdsUtil.BUILD_DEBUG) {
+        if (BuildConfig.DEBUG) {
             listINAPId.add(PRODUCT_ID_TEST);
         }
         billingClient = BillingClient.newBuilder(application)
@@ -384,7 +385,7 @@ public class AppPurchase {
             return "";
         }
 
-        if (AdsUtil.BUILD_DEBUG) {
+        if (BuildConfig.DEBUG) {
             // Dùng ID Purchase test khi debug
             productId = PRODUCT_ID_TEST;
         }
@@ -457,7 +458,7 @@ public class AppPurchase {
             return "";
         }
 
-        if (AdsUtil.BUILD_DEBUG) {
+        if (BuildConfig.DEBUG) {
             // sử dụng ID Purchase test
             purchase(activity, PRODUCT_ID_TEST);
             return "Billing test";
