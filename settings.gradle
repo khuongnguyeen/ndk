@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "AdsNdk"
 include ':app'
 include ':ads'
+include ':crashlibs'

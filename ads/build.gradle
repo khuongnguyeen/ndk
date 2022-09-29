@@ -35,7 +35,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     api 'com.google.android.gms:play-services-ads:21.0.0'
     api 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    api 'com.intuit.sdp:sdp-android:1.0.6'
     api 'androidx.lifecycle:lifecycle-process:2.2.0'
     implementation 'com.google.android.material:material:1.6.0'
 

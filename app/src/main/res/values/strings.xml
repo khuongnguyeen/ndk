@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">AdsNdk</string>
+    <string name="rate_content_rate_app">Please! Take a moment to rate 5 stars for Document. Thanks for your support!</string>
+    <string name="text_error_content">So sorry! Please, feedback for better improvement. Thank you so much!</string>
+
+    <string name="send_feedback">Send Feedback</string>
+    <string name="try_again">Try again</string>
+    <string name="text_error_title">Oh, Snap!</string>
+    <string name="rate_title">[Rate Dialog] All Document</string>
+    <string name="rate_content_sign">\n Version Code:</string>
+    <string name="thank_share">Thank you for sharing your feedback</string>
+    <string name="fill_feedback">Please write something</string>
+    <string name="skip">Skip</string>
+    <string name="image">Image</string>
+    <string name="rate_do_you_like_this_app">Do you like this App?</string>
 </resources>

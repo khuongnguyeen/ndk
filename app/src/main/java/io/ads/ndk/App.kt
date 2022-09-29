@@ -1,10 +1,12 @@
 package io.ads.ndk
 
 import android.app.Application
+import io.ads.ndk.ads.AdsUtil
 import io.ads.ndk.ads.Constants
+import io.sad.monster.ads.application.AdsApplication
 import io.sad.monster.util.Adz
 
-class App:Application() {
+class App:AdsApplication() {
 
     override fun onCreate() {
         super.onCreate()
@@ -19,4 +21,8 @@ class App:Application() {
         Adz.listTypeNative[Constants.NATIVE_WELCOME] = null
     }
 
+
+    override fun enableAdsResume() = true
+
+    override fun getOpenResumeAppAdId() = AdsUtil.getKeyOpenAd(this,Constants.OPEN_RESUME)!!
 }

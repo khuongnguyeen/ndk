@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             Constants.NATIVE_HOME,
             binding.nativeContainer
         )
+
+        binding.btnCrash.setOnClickListener {
+            throw  RuntimeException("This is a crash");
+        }
+
     }
 
     override fun onResume() {

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.ads.LoadAdError
+import com.office.crashviewer.config.CaocConfig
 import io.ads.ndk.databinding.ActivitySplashBinding
 import io.sad.monster.ads.Ads
 import io.sad.monster.callback.AdCallback
@@ -21,7 +22,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
-         }
+        loadCrash()
+    }
 
     override fun onResume() {
         super.onResume()
@@ -61,10 +63,20 @@ class SplashActivity : AppCompatActivity() {
             })
     }
 
+    private fun loadCrash() {
+        CaocConfig.Builder.create()
+            .showRestartButton(true) //default: true
+            .logErrorOnRestart(false) //default: true
+            .trackActivities(false) //default: false
+            .minTimeBetweenCrashesMs(2000) //default: 3000
+            .errorDrawable(R.mipmap.ic_launcher) //default: bug image
+            .errorActivity(CustomErrorActivity::class.java) //default: null (default error activity)
+            .apply()
+    }
 
 
     private fun call() {
-        var  mIntent : Intent = Intent(this, MainActivity::class.java)
+        var mIntent: Intent = Intent(this, MainActivity::class.java)
 
         mIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         mIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
